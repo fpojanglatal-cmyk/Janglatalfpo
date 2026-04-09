@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Amrittulya – Janglatal FPO | Katihar, Bihar</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gd:#1a4d2e;--gm:#2d7a4f;--gl:#4caf7d;
+  --gold:#e8a623;--goldl:#f5c84a;
+  --cream:#fdf6e3;--white:#fff;
+  --td:#1a2a1a;--tm:#3d5a3d;
+  --red:#c0392b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--td);overflow-x:hidden}
+
+@keyframes fD{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fU{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ── WHATSAPP FLOATING ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:9999;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.wa-bubble{
+  background:#fff;border-radius:16px;padding:12px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);max-width:240px;
+  font-size:.82rem;color:var(--td);line-height:1.5;
+  border-left:4px solid #25d366;
+  animation:fU .5s ease both;
+}
+.wa-bubble strong{color:#25d366;display:block;margin-bottom:4px;font-size:.88rem}
+.wa-btn{
+  width:62px;height:62px;border-radius:50%;
+  background:#25d366;display:flex;align-items:center;justify-content:center;
+  text-decoration:none;animation:pulse 2s infinite;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  transition:transform .2s;
+}
+.wa-btn:hover{transform:scale(1.1)}
+.wa-btn svg{width:34px;height:34px;fill:#fff}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  background:rgba(26,77,46,.97);backdrop-filter:blur(14px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 4%;box-shadow:0 2px 24px rgba(0,0,0,.3);
+}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
+.nav-logo-txt .mn{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff}
+.nav-logo-txt .sn{font-size:.58rem;color:var(--goldl);letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.84rem;transition:color .2s}
+.nav-links a:hover{color:var(--goldl)}
+.nav-wa{
+  background:#25d366;color:#fff!important;padding:.42rem 1rem;
+  border-radius:30px;font-weight:600!important;font-size:.82rem!important;
+  display:flex;align-items:center;gap:6px;
+}
+.nav-wa svg{width:16px;height:16px;fill:#fff}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:7rem 5% 5rem;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('event_krishi1.jpg') center/cover no-repeat;
+  filter:brightness(.28) saturate(1.3);
+}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(155deg,rgba(10,40,20,.92) 0%,rgba(26,77,46,.8) 55%,rgba(10,40,20,.94) 100%)}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:100px;background:var(--cream);clip-path:ellipse(65% 100% at 50% 100%)}
+.hero-inner{position:relative;z-index:2;max-width:860px}
+.h-badge{
+  background:linear-gradient(90deg,var(--gold),var(--goldl));color:var(--gd);
+  font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  padding:7px 22px;border-radius:30px;margin-bottom:1.5rem;display:inline-flex;
+  align-items:center;gap:8px;animation:fD .8s ease both;
+  box-shadow:0 4px 18px rgba(232,166,35,.45);
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,5.5vw,4.2rem);
+  color:#fff;font-weight:900;line-height:1.1;
+  animation:fD .9s .1s ease both;
+}
+.hero h1 span{color:var(--goldl);display:block}
+.h-hi{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:clamp(.95rem,2.2vw,1.35rem);
+  color:rgba(255,255,255,.85);margin-top:.9rem;
+  animation:fD 1s .18s ease both;
+}
+.h-tag{
+  color:rgba(255,255,255,.7);font-size:.96rem;
+  max-width:580px;margin:1.3rem auto 2.5rem;line-height:1.8;
+  animation:fD 1s .28s ease both;
+}
+.h-tag strong{color:var(--goldl)}
+.h-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fD 1s .38s ease both}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--goldl));
+  color:var(--gd);padding:.9rem 2.2rem;border-radius:50px;border:none;
+  font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 6px 24px rgba(232,166,35,.5);
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(232,166,35,.6)}
+.btn-wa{
+  background:#25d366;color:#fff;padding:.9rem 2.2rem;border-radius:50px;
+  border:none;font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;
+  display:flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;
+  box-shadow:0 6px 24px rgba(37,211,102,.4);
+}
+.btn-wa:hover{transform:translateY(-3px)}
+.btn-wa svg{width:20px;height:20px;fill:#fff}
+
+/* ── TICKER ── */
+.ticker{background:var(--gold);padding:.6rem 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;animation:ticker 30s linear infinite;gap:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick-item{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:0 2rem;font-size:.82rem;font-weight:600;color:var(--gd);
+}
+.tick-item::after{content:'•';margin-left:2rem;color:var(--gd)}
+
+/* ── STATS ── */
+.stats{
+  background:var(--gd);padding:2.8rem 4%;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:2rem;text-align:center;
+}
+.si{animation:fU .7s ease both}
+.si:nth-child(1){animation-delay:.1s}.si:nth-child(2){animation-delay:.2s}
+.si:nth-child(3){animation-delay:.3s}.si:nth-child(4){animation-delay:.4s}
+.si:nth-child(5){animation-delay:.5s}
+.sn{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--gold);font-weight:900;line-height:1}
+.sl{color:rgba(255,255,255,.7);font-size:.78rem;margin-top:.3rem;letter-spacing:.5px}
+
+/* ── SECTION BASE ── */
+section{padding:5.5rem 4%}
+.sh{text-align:center;margin-bottom:3.5rem}
+.stag{
+  font-size:.7rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gm);font-weight:700;margin-bottom:.7rem;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.stag::before,.stag::after{content:'';width:32px;height:2px;background:var(--gm)}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.7rem);color:var(--gd);font-weight:700;line-height:1.2}
+.stitle span{color:var(--gm)}
+.ssub{color:var(--tm);font-size:.95rem;max-width:620px;margin:1rem auto 0;line-height:1.8}
+
+/* ── HERO PROMO SECTION ── */
+.promo{background:var(--cream)}
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto}
+.promo-card{border-radius:20px;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(26,77,46,.15);cursor:pointer;transition:transform .3s}
+.promo-card:hover{transform:translateY(-6px)}
+.promo-card img{width:100%;display:block;transition:transform .4s}
+.promo-card:hover img{transform:scale(1.04)}
+.promo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(26,77,46,.92),transparent);
+  padding:2rem 1.5rem 1.2rem;color:#fff;
+}
+.promo-label .cat{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--goldl);font-weight:600}
+.promo-label h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-top:.3rem}
+.promo-label p{font-size:.82rem;opacity:.85;margin-top:.3rem}
+.promo-badge{
+  position:absolute;top:16px;right:16px;background:var(--gold);
+  color:var(--gd);font-size:.68rem;font-weight:700;
+  padding:5px 14px;border-radius:30px;letter-spacing:1px;text-transform:uppercase;
+}
+
+/* ── PRODUCTS ── */
+.products{background:#eef7f1}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+.pc{
+  background:#fff;border-radius:22px;overflow:hidden;
+  box-shadow:0 6px 28px rgba(26,77,46,.09);
+  transition:transform .32s,box-shadow .32s;
+  border:1px solid rgba(76,175,125,.15);display:flex;flex-direction:column;
+}
+.pc:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(26,77,46,.18)}
+.pimg{height:210px;overflow:hidden;position:relative;background:#f5f5f0}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pc:hover .pimg img{transform:scale(1.08)}
+.p-brand{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--gd);font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.p-tag{position:absolute;top:12px;right:12px;background:rgba(26,77,46,.88);color:#fff;font-size:.62rem;font-weight:600;padding:4px 10px;border-radius:20px}
+.p-npo{position:absolute;bottom:12px;right:12px;background:var(--red);color:#fff;font-size:.6rem;font-weight:700;padding:3px 9px;border-radius:12px}
+.pinfo{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.pcat{font-size:.67rem;color:var(--gm);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:.3rem}
+.pname{font-family:'Playfair Display',serif;font-size:1.22rem;color:var(--gd);margin-bottom:.3rem;line-height:1.25}
+.pname-h{font-family:'Tiro Devanagari Hindi',serif;font-size:.9rem;color:var(--gm);margin-bottom:.7rem}
+.pdesc{font-size:.82rem;color:var(--tm);line-height:1.65;flex:1}
+.pnutri{
+  display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem;
+}
+.pnutri span{background:#eef7f1;color:var(--gm);font-size:.65rem;font-weight:600;padding:3px 9px;border-radius:12px}
+.pmrp{font-size:.9rem;color:var(--gd);font-weight:700;margin-top:.7rem}
+.pfoot{margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(76,175,125,.18);display:flex;align-items:center;gap:.7rem}
+.pwa{
+  flex:1;background:#25d366;color:#fff;padding:.52rem 0;border-radius:30px;
+  font-size:.78rem;font-weight:700;border:none;cursor:pointer;
+  text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;
+  transition:background .2s;
+}
+.pwa:hover{background:#1da851}
+.pwa svg{width:15px;height:15px;fill:#fff}
+.porder{
+  flex:1;background:var(--gd);color:#fff;padding:.52rem 0;border-radius:30px;
+  font-size:.78rem;font-weight:600;border:none;cursor:pointer;
+  text-decoration:none;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.porder:hover{background:var(--gm)}
+
+/* ── GALLERY PROMO ── */
+.gallery{background:var(--cream)}
+.gfull{max-width:1100px;margin:0 auto}
+.g-hero-img{width:100%;border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(26,77,46,.18);margin-bottom:1.5rem}
+.g-hero-img img{width:100%;display:block;max-height:420px;object-fit:cover}
+.ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.ggrid img{width:100%;border-radius:14px;object-fit:cover;height:200px;display:block;transition:transform .3s,box-shadow .3s;box-shadow:0 4px 16px rgba(26,77,46,.1)}
+.ggrid img:hover{transform:scale(1.04);box-shadow:0 12px 32px rgba(26,77,46,.2)}
+.ggrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.ggrid2 img{width:100%;border-radius:14px;object-fit:cover;height:240px;display:block;box-shadow:0 4px 16px rgba(26,77,46,.1);transition:transform .3s}
+.ggrid2 img:hover{transform:scale(1.03)}
+
+/* ── BRAND SECTION ── */
+.brand{background:var(--gd);padding:5rem 4%;text-align:center;position:relative;overflow:hidden}
+.brand::before{content:'अमृत';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Tiro Devanagari Hindi',serif;font-size:16rem;color:rgba(255,255,255,.03);pointer-events:none;white-space:nowrap}
+.b-inner{position:relative;z-index:1;max-width:820px;margin:0 auto}
+.b-logo{
+  width:92px;height:92px;border-radius:50%;overflow:hidden;
+  margin:0 auto 1.5rem;border:4px solid var(--gold);
+  box-shadow:0 0 0 8px rgba(245,200,74,.18),0 0 0 16px rgba(245,200,74,.08);
+}
+.b-logo img{width:100%;height:100%;object-fit:cover}
+.b-inner h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:#fff;margin-bottom:.5rem}
+.b-inner h2 span{color:var(--goldl)}
+.b-hi{font-family:'Tiro Devanagari Hindi',serif;font-size:1.25rem;color:rgba(255,255,255,.82);margin-bottom:1.3rem}
+.b-inner p{color:rgba(255,255,255,.65);font-size:.94rem;line-height:1.82;margin-bottom:2rem}
+.b-pills{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.b-pill{border:1.5px solid rgba(245,200,74,.42);color:var(--goldl);padding:.45rem 1.2rem;border-radius:30px;font-size:.8rem}
+
+/* ── WHY ── */
+.why{background:#eef7f1}
+.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.wc{background:#fff;border-radius:18px;padding:1.8rem 1.5rem;box-shadow:0 4px 20px rgba(26,77,46,.07);border-top:4px solid var(--gl);transition:transform .25s}
+.wc:hover{transform:translateY(-5px)}
+.wi{font-size:2.2rem;margin-bottom:.9rem}
+.wc h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gd);margin-bottom:.55rem}
+.wc p{font-size:.83rem;color:var(--tm);line-height:1.7}
+
+/* ── CONTACT ── */
+.contact{background:var(--cream)}
+.cw{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.ci h2{font-family:'Playfair Display',serif;font-size:1.85rem;color:var(--gd);margin-bottom:1rem}
+.ci p{font-size:.9rem;color:var(--tm);line-height:1.75;margin-bottom:1.4rem}
+.cd{display:flex;align-items:flex-start;gap:12px;margin-bottom:.9rem}
+.cd .ico{background:var(--gm);color:#fff;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cd .txt .lbl{font-size:.67rem;color:var(--gm);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.cd .txt .val{font-size:.88rem;color:var(--td);margin-top:2px;font-weight:500}
+.cd .txt a{color:var(--gd);text-decoration:none}
+.cd .txt a:hover{color:var(--gm)}
+.wa-contact{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25d366;color:#fff;padding:.75rem 1.6rem;
+  border-radius:50px;font-size:.9rem;font-weight:700;
+  text-decoration:none;margin-top:.5rem;
+  box-shadow:0 4px 18px rgba(37,211,102,.35);
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-contact:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.45)}
+.wa-contact svg{width:20px;height:20px;fill:#fff}
+.cf{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 6px 28px rgba(26,77,46,.1)}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:.77rem;font-weight:700;color:var(--gm);margin-bottom:.4rem;letter-spacing:.5px;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{
+  width:100%;padding:.72rem 1rem;
+  border:1.5px solid rgba(76,175,125,.28);border-radius:11px;
+  font-family:inherit;font-size:.88rem;background:var(--cream);
+  color:var(--td);outline:none;transition:border .2s;resize:none;
+}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--gm)}
+.fsub{
+  width:100%;background:linear-gradient(135deg,var(--gd),var(--gm));
+  color:#fff;padding:.88rem;border:none;border-radius:11px;
+  font-size:.95rem;font-weight:700;cursor:pointer;transition:opacity .2s;
+}
+.fsub:hover{opacity:.9}
+.fwa{
+  width:100%;background:#25d366;color:#fff;padding:.88rem;
+  border:none;border-radius:11px;font-size:.95rem;font-weight:700;
+  cursor:pointer;margin-top:.7rem;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  text-decoration:none;transition:background .2s;
+}
+.fwa:hover{background:#1da851}
+.fwa svg{width:20px;height:20px;fill:#fff}
+
+/* ── FOOTER ── */
+footer{background:#091f10;color:rgba(255,255,255,.65);padding:3rem 4% 2rem}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.f-brand .f-logo{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;margin-bottom:.4rem}
+.f-brand .f-hi{font-family:'Tiro Devanagari Hindi',serif;font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:1rem}
+.f-brand p{font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.5)}
+.f-links h4,.f-contact h4{color:rgba(255,255,255,.85);font-size:.88rem;font-weight:700;margin-bottom:1rem;letter-spacing:.5px}
+.f-links ul{list-style:none}
+.f-links li{margin-bottom:.55rem}
+.f-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;transition:color .2s}
+.f-links a:hover{color:var(--goldl)}
+.f-contact p{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;display:flex;align-items:flex-start;gap:8px}
+.f-contact p span{color:rgba(255,255,255,.8)}
+.footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fcopy{font-size:.72rem;color:rgba(255,255,255,.3)}
+.f-badges{display:flex;gap:.8rem;flex-wrap:wrap}
+.f-badge{border:1px solid rgba(245,200,74,.3);color:rgba(245,200,74,.7);font-size:.65rem;padding:3px 10px;border-radius:20px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .promo-grid,.cw,.footer-top{grid-template-columns:1fr;gap:1.8rem}
+  .ggrid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .pgrid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .stats{grid-template-columns:1fr 1fr}
+  .ggrid{grid-template-columns:1fr}
+  .ggrid2{grid-template-columns:1fr}
+  .h-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ── WHATSAPP FLOATING ── -->
+<div class="wa-float">
+  <div class="wa-bubble">
+    <strong>💬 WhatsApp par Order Karein!</strong>
+    Amrittulya Makhana, Mustard Oil, Makhana Aata — seedha order karein.
+  </div>
+  <a class="wa-btn" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0A%0AMain%20Amrittulya%20products%20order%20karna%20chahta%2Fti%20hoon%3A%0A%0A%E2%96%B6%20Product%3A%20%0A%E2%96%B6%20Matra%20(Quantity)%3A%20%0A%E2%96%B6%20Delivery%20Address%3A%20%0A%0APlease%20confirm%20karein%20aur%20price%20batayein.%20Shukriya!%20%F0%9F%8C%BE" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo_janglatal.png" alt="Janglatal FPO Logo"/>
+    <div class="nav-logo-txt">
+      <div class="mn">Janglatal FPO</div>
+      <div class="sn">Amrittulya · Katihar, Bihar</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#promo">Hamare Utpad</a></li>
+    <li><a href="#products">Product Range</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#brand">Amrittulya</a></li>
+    <li><a href="#contact">Sampark</a></li>
+    <li>
+      <a class="nav-wa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20order%20karna%20chahta%2Fti%20hoon!" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Order
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <div class="h-badge">🌾 GSTIN: 10AANAJ1085A1Z8 · FSSAI: 20425351000639</div>
+    <h1>Janglatal FPO<span>Amrittulya Brand</span></h1>
+    <div class="h-hi">जंगलताल पंचायत किसान उत्पादक संगठन सहकारी समिति लिमिटेड</div>
+    <p class="h-tag">
+      <strong>हाथ किसान का, भरोसा आपका — From Farmers to You.</strong><br/>
+      100% Shuddh Makhana · Asli Sarson Tel · No Palm Oil · Desi Supper Food<br/>
+      <em style="font-size:.85rem;opacity:.75">Bhawanipur, Amdabad, Katihar (Bihar) – 854117</em>
+    </p>
+    <div class="h-btns">
+      <a href="#products" class="btn-gold">🛒 Hamare Utpad Dekhein</a>
+      <a href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0A%0AMain%20Amrittulya%20products%20order%20karna%20chahta%2Fti%20hoon%3A%0A%0A%E2%96%B6%20Product%3A%20%0A%E2%96%B6%20Matra%20(Quantity)%3A%20%0A%E2%96%B6%20Delivery%20Address%3A%20%0A%0APlease%20confirm%20karein%20aur%20price%20batayein.%20Shukriya!%20%F0%9F%8C%BE" target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp par Order Karein
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="tick-item">🪷 Amrittulya Raw Makhana – 100% Pure Foxnut</span>
+    <span class="tick-item">🫙 Amrit Tulya Mustard Oil – Wooden Ghani Method</span>
+    <span class="tick-item">🌾 Makhana Aata – Foxnut Flour</span>
+    <span class="tick-item">🍅 Tangy-Tomato Makhana – No Palm Oil</span>
+    <span class="tick-item">🧅 Cream-Onion Makhana – ₹210 / 80g</span>
+    <span class="tick-item">🌿 Mint Makhana – Refreshing & Healthy</span>
+    <span class="tick-item">🌶️ Peri-Peri Makhana – Spicy & Bold</span>
+    <span class="tick-item">🪷 Amrittulya Raw Makhana – 100% Pure Foxnut</span>
+    <span class="tick-item">🫙 Amrit Tulya Mustard Oil – Wooden Ghani Method</span>
+    <span class="tick-item">🌾 Makhana Aata – Foxnut Flour</span>
+    <span class="tick-item">🍅 Tangy-Tomato Makhana – No Palm Oil</span>
+    <span class="tick-item">🧅 Cream-Onion Makhana – ₹210 / 80g</span>
+    <span class="tick-item">🌿 Mint Makhana – Refreshing & Healthy</span>
+    <span class="tick-item">🌶️ Peri-Peri Makhana – Spicy & Bold</span>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<div class="stats">
+  <div class="si"><div class="sn">FPO</div><div class="sl">Registered Samiti</div></div>
+  <div class="si"><div class="sn">9+</div><div class="sl">Amrittulya Utpad</div></div>
+  <div class="si"><div class="sn">100%</div><div class="sl">Shuddh & Natural</div></div>
+  <div class="si"><div class="sn">FSSAI</div><div class="sl">Licensed &amp; Certified</div></div>
+  <div class="si"><div class="sn">Bihar</div><div class="sl">Katihar, Bhawanipur</div></div>
+</div>
+
+<!-- ── PROMO HERO IMAGES ── -->
+<section class="promo" id="promo">
+  <div class="sh">
+    <div class="stag">Hamare Utpad</div>
+    <h2 class="stitle">Amrittulya — <span>Haath Kisaan Ka, Bharosa Aapka</span></h2>
+    <p class="ssub">From Farmers to You. 100% Pure · Natural · Healthy · FSSAI Certified</p>
+  </div>
+  <div class="promo-grid" style="max-width:1100px;margin:0 auto">
+    <div class="promo-card">
+      <img src="promo_makhana.png" alt="Amrittulya Raw Makhana Promo"/>
+      <div class="p-brand" style="position:absolute;top:14px;left:14px">Amrittulya</div>
+      <div class="promo-label">
+        <div class="cat">Premium Foxnut · 100% Natural</div>
+        <h3>Amrittulya Raw Makhana</h3>
+        <p>स्वास्थ्य का वादा, देसी टेस्टी का स्वाद! No Palm Oil · High Protein</p>
+      </div>
+    </div>
+    <div class="promo-card">
+      <img src="promo_oil_farmer.png" alt="Amrittulya Mustard Oil Promo"/>
+      <div class="p-brand" style="position:absolute;top:14px;left:14px">Amrittulya</div>
+      <div class="promo-label">
+        <div class="cat">Wooden Ghani · 100% Pure</div>
+        <h3>Amrit Tulya Mustard Oil</h3>
+        <p>हाथ किसान का, भरोसा आपका — No Chemical, No Refining</p>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:2rem auto 0">
+    <div class="promo-card">
+      <img src="promo_oil_bottle.png" alt="Mustard Oil Bottle"/>
+      <div class="promo-badge">1 Litre · 100% Pure</div>
+    </div>
+    <div class="promo-card">
+      <img src="promo_oil2.png" alt="Mustard Oil Pouring"/>
+      <div class="promo-badge">Wooden Ghani</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section class="products" id="products">
+  <div class="sh">
+    <div class="stag">Poori Product Range</div>
+    <h2 class="stitle">Amrittulya <span>9 Utpad — Ek Brand</span></h2>
+    <p class="ssub">Katihar ke khetom se seedha — shuddh, natural, FSSAI certified. No Palm Oil · No Adulteration · Desi Supper Food.</p>
+  </div>
+  <div class="pgrid">
+
+    <!-- 1. Mustard Oil -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="promo_oil_bottle.png" alt="Amrittulya Mustard Oil"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Sarson Tel</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Tel · Wooden Ghani Cold Pressed</div>
+        <div class="pname">Amrit Tulya Mustard Oil</div>
+        <div class="pname-h">अमृत तुल्य सरसों तेल · 100% Pure</div>
+        <div class="pdesc">Asli Wooden Ghani Sarson Ka Tel — No Refined, No Chemical, No Adulteration. Rich in Omega 3 &amp; 6, Natural Antioxidants. 884 Kcal/100g. 500ml, 1L, 2L available.</div>
+        <div class="pnutri"><span>Omega 3&6</span><span>No Refined</span><span>No Chemical</span><span>Natural</span></div>
+        <div class="pmrp">Net Qty: 500ml / 1L / 2L · 100% Natural · No Mixing</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Mustard%20Oil*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20price%20aur%20availability%20batayein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Mustard Oil">Email Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Raw Makhana -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="promo_makhana.png" alt="Amrittulya Raw Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Raw Makhana</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Premium Foxnut Seeds · Unroasted</div>
+        <div class="pname">Amrit Tulya Raw Makhana</div>
+        <div class="pname-h">अमृत तुल्य कच्चा मखाना · 250g</div>
+        <div class="pdesc">100% Raw Foxnut (Makhana) — Naturally Gluten Free, Rich in Protein &amp; Calcium, Low Fat. 347 Kcal, Protein 9.7g, Fibre 14.5g, Calcium 60mg, Magnesium 95mg. Net Wt: 250g.</div>
+        <div class="pnutri"><span>Gluten Free</span><span>High Protein</span><span>Low Fat</span><span>100% Natural</span></div>
+        <div class="pmrp">Net Wt: 250g · 100% Raw &amp; Unroasted</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Raw%20Makhana%20(250g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20price%20aur%20availability%20batayein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Raw Makhana">Email Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Tangy Tomato -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="img_tangytomato.jpg" alt="Tangy Tomato Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Roasted</div>
+        <div class="p-npo">No Palm Oil</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Roasted Makhana · Desi Supper Food</div>
+        <div class="pname">Roasted Tangy-Tomato Makhana</div>
+        <div class="pname-h">अमृततुल्य मखाना – टैंगी टोमैटो</div>
+        <div class="pdesc">Tangy tomato masale mein roasted — crispy, chatpata aur irresistible! Pure Sunflower Oil. 452 Kcal, Protein 9g, Iron 1.6mg, Potassium 310mg. Net Wt: 80g. MRP ₹210.</div>
+        <div class="pnutri"><span>No Palm Oil</span><span>452 Kcal</span><span>Protein 9g</span><span>Sunflower Oil</span></div>
+        <div class="pmrp">MRP: ₹210 · 80gm · No Palm Oil</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Tangy-Tomato%20Makhana%20(80g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Tangy Tomato Makhana">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Cream Onion -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="img_creamonion.jpg" alt="Cream Onion Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Roasted</div>
+        <div class="p-npo">No Palm Oil</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Roasted Makhana · Desi Supper Food</div>
+        <div class="pname">Roasted Cream-Onion Makhana</div>
+        <div class="pname-h">अमृततुल्य मखाना – क्रीम ओनियन</div>
+        <div class="pdesc">Creamy onion flavour — mild, smooth aur delicious! High in Antioxidants, Naturally Fat Free. 456 Kcal, Protein 8.9g, Iron 16mg, Magnesium 90mg. Net Wt: 80g. MRP ₹210.</div>
+        <div class="pnutri"><span>No Palm Oil</span><span>Antioxidants</span><span>Protein 8.9g</span><span>Fat Free</span></div>
+        <div class="pmrp">MRP: ₹210 · 80gm · No Palm Oil</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Cream-Onion%20Makhana%20(80g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Cream Onion Makhana">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Salt Pepper -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="img_saltpepper.jpg" alt="Salt Pepper Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Roasted</div>
+        <div class="p-npo">No Palm Oil</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Roasted Makhana · Desi Supper Food</div>
+        <div class="pname">Roasted Salt-Pepper Makhana</div>
+        <div class="pname-h">अमृततुल्य मखाना – साल्ट पेपर</div>
+        <div class="pdesc">Classic salt &amp; pepper roasted makhana — simple, healthy aur bahut tasty! 421 Kcal, Protein 9.5g, Fibre 7.8g, Magnesium 92mg. No Palm Oil. Net Wt: 80g. MRP ₹210.</div>
+        <div class="pnutri"><span>No Palm Oil</span><span>Protein 9.5g</span><span>Fibre 7.8g</span><span>12 Nutrients</span></div>
+        <div class="pmrp">MRP: ₹210 · 80gm · No Palm Oil</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Salt-Pepper%20Makhana%20(80g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Salt Pepper Makhana">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Mint -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="img_mint.jpg" alt="Mint Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Roasted</div>
+        <div class="p-npo">No Palm Oil</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Roasted Makhana · Desi Supper Food</div>
+        <div class="pname">Roasted Mint-Makhana</div>
+        <div class="pname-h">अमृततुल्य मखाना – मिंट मखाना</div>
+        <div class="pdesc">Refreshing pudina (mint) flavour — thanda thanda, chatpata! 452 Kcal, Protein 9g, Iron 18mg, Magnesium 90mg, Calcium 55mg. No Palm Oil. Net Wt: 80g. MRP ₹210.</div>
+        <div class="pnutri"><span>No Palm Oil</span><span>Iron 18mg</span><span>Protein 9g</span><span>Refreshing</span></div>
+        <div class="pmrp">MRP: ₹210 · 80gm · No Palm Oil</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Mint%20Makhana%20(80g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Mint Makhana">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Peri Peri -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="img_periperi.jpg" alt="Peri Peri Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Roasted</div>
+        <div class="p-npo">No Palm Oil</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Roasted Makhana · Desi Supper Food</div>
+        <div class="pname">Roasted Peri-Peri Makhana</div>
+        <div class="pname-h">अमृततुल्य मखाना – पेरी पेरी</div>
+        <div class="pdesc">Fiery peri-peri masale mein roasted — spicy, bold, addictive! Rich in Fiber, 12 Vital Nutrients, Naturally Fat Free. 446 Kcal, Protein 8.8g, Iron 12mg. Net Wt: 80g. MRP ₹210.</div>
+        <div class="pnutri"><span>No Palm Oil</span><span>12 Nutrients</span><span>Protein 8.8g</span><span>Spicy Bold</span></div>
+        <div class="pmrp">MRP: ₹210 · 80gm · No Palm Oil</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Peri-Peri%20Makhana%20(80g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Peri Peri Makhana">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Sweet Thai Chilli -->
+    <div class="pc">
+      <div class="pimg">
+        <img src="img_thaichilli.jpg" alt="Sweet Thai Chilli Makhana"/>
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Roasted</div>
+        <div class="p-npo">Sunflower Oil</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Roasted Makhana · Desi Supper Food</div>
+        <div class="pname">Roasted Sweet Thai Chilli Makhana</div>
+        <div class="pname-h">अमृततुल्य मखाना – स्वीट थाई चिल्ली</div>
+        <div class="pdesc">Sweet &amp; tangy Thai chilli — exotic taste, desi healthy twist! Roasted in Pure Sunflower Oil. 454 Kcal, Protein 8.6g, Calcium 55mg, Iron 1.7mg. Net Wt: 80g. MRP ₹210.</div>
+        <div class="pnutri"><span>Sunflower Oil</span><span>454 Kcal</span><span>Protein 8.6g</span><span>Fat Free</span></div>
+        <div class="pmrp">MRP: ₹210 · 80gm · Sunflower Oil</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Sweet%20Thai%20Chilli%20Makhana%20(80g)*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Sweet Thai Chilli Makhana">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Makhana Aata -->
+    <div class="pc">
+      <div class="pimg" style="background:linear-gradient(135deg,#f5f0e8,#e8dcc8);display:flex;align-items:center;justify-content:center;font-size:5rem">
+        🌾
+        <div class="p-brand">Amrittulya</div><div class="p-tag">Makhana Aata</div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Foxnut Flour · 100% Pure · MRP ₹250</div>
+        <div class="pname">Amrittulya Makhana Aata</div>
+        <div class="pname-h">अमृततुल्य मखाना आटा · Foxnut Flour</div>
+        <div class="pdesc">100% Pure Makhana (Foxnut) Flour — protein, calcium aur nutrients se bharpur. Roti, puri, paratha ya baking mein use karein. Gluten-sensitive logon ke liye bhi behtareen. MRP: ₹250.</div>
+        <div class="pnutri"><span>MRP ₹250</span><span>Gluten Friendly</span><span>High Protein</span><span>100% Pure</span></div>
+        <div class="pmrp">MRP: ₹250 · Foxnut Flour</div>
+        <div class="pfoot">
+          <a class="pwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0AMain%20*Amrittulya%20Makhana%20Aata*%20order%20karna%20chahta%2Fti%20hoon.%0A%0AMatra%3A%20%0ADelivery%20Address%3A%20%0A%0APlease%20confirm%20karein.%20Shukriya!" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Order
+          </a>
+          <a class="porder" href="mailto:fpojanglatal@gmail.com?subject=Order: Makhana Aata">Email</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section class="gallery" id="gallery">
+  <div class="sh">
+    <div class="stag">Hamare Events</div>
+    <h2 class="stitle">FPO Karyalay aur <span>Exhibitions</span></h2>
+    <p class="ssub">Grand Launch, Krishi Vibhag Exhibition — Janglatal FPO ki badhaati pahunch.</p>
+  </div>
+  <div class="gfull">
+    <div class="g-hero-img">
+      <img src="img_launch_invite.webp" alt="Amrittulya Grand Launch Invitation"/>
+    </div>
+    <div class="ggrid">
+      <img src="img_team1.jpg" alt="FPO Team Grand Launch"/>
+      <img src="img_team2.jpg" alt="FPO Team with Products"/>
+      <img src="img_team3.jpg" alt="FPO Inauguration"/>
+      <img src="event_stall1.jpg" alt="Krishi Vibhag Exhibition Stall"/>
+      <img src="event_stall2.jpg" alt="Exhibition Stall with Products"/>
+      <img src="event_krishi2.jpg" alt="Bihar Krishi Exhibition"/>
+    </div>
+    <div class="ggrid2" style="margin-top:1rem">
+      <img src="event_krishi1.jpg" alt="Exhibition Team" style="height:260px"/>
+      <img src="team_fpo.jpg" alt="FPO Office Team" style="height:260px"/>
+    </div>
+  </div>
+</section>
+
+<!-- ── BRAND ── -->
+<section class="brand" id="brand">
+  <div class="b-inner">
+    <div class="b-logo"><img src="logo_janglatal.png" alt="Janglatal FPO Logo"/></div>
+    <h2>Amrittulya <span>Brand</span></h2>
+    <div class="b-hi">अमृततुल्य — जैसे अमृत, वैसे हमारे उत्पाद</div>
+    <p>
+      "Amrittulya" — yaani amrit ke saman. Yahi hamari pehchaan hai. Jis tarah amrit shuddh, gun-kari aur anmol hota hai, waisi hi hamari pratigya hai — ki har utpad mein koi samjhauta nahi, koi milawat nahi.
+      <br/><br/>
+      <strong style="color:var(--goldl)">हाथ किसान का, भरोसा आपका — From Farmers to You.</strong><br/>
+      Together for Prosperous Farming &amp; Sustainable Growth.
+    </p>
+    <div class="b-pills">
+      <div class="b-pill">🌿 Milawat Mukta</div>
+      <div class="b-pill">🧑‍🌾 Kisan Utpadit</div>
+      <div class="b-pill">✅ FSSAI Certified</div>
+      <div class="b-pill">🚫 No Palm Oil</div>
+      <div class="b-pill">🇮🇳 Make in India</div>
+      <div class="b-pill">🏅 Desi Supper Food</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ── -->
+<section class="why">
+  <div class="sh">
+    <div class="stag">Kyun Chunein</div>
+    <h2 class="stitle">Hamein Kyun <span>Choose Karein?</span></h2>
+  </div>
+  <div class="wg">
+    <div class="wc"><div class="wi">🌱</div><h3>Prakritik Kheti</h3><p>Jaivik aur prakritik kheti ke utpad. Koi haanikarak rasaayan nahi — prakriti ka sachcha vardaan.</p></div>
+    <div class="wc"><div class="wi">🚫</div><h3>No Palm Oil</h3><p>Sabhi roasted makhana products mein No Palm Oil. Pure Sunflower Oil — healthy aur tasty.</p></div>
+    <div class="wc"><div class="wi">🏅</div><h3>FSSAI Certified</h3><p>FSSAI License: 20425351000639. Har utpad tested, certified aur safe — poore parivaar ke liye.</p></div>
+    <div class="wc"><div class="wi">🤝</div><h3>Kisan Ki Aatma</h3><p>FPO mein kisan khud maalik hain. Aapka order seedha kisan ke parivaar tak laabh pahunchata hai.</p></div>
+    <div class="wc"><div class="wi">🎯</div><h3>9+ Flavours</h3><p>Raw Makhana se lekar 7 exciting roasted flavours tak — har mood ke liye ek perfect utpad.</p></div>
+    <div class="wc"><div class="wi">📦</div><h3>Direct Delivery</h3><p>WhatsApp par order karein — seedha aapke ghar tak. Fast, reliable aur fresh delivery.</p></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="sh">
+    <div class="stag">Sampark Karein</div>
+    <h2 class="stitle">Order ya Jaankari ke liye <span>Hamare Saath Judein</span></h2>
+  </div>
+  <div class="cw">
+    <div class="ci">
+      <h2>Hum Yahaan Hain Aapke Liye</h2>
+      <p>Order karna ho, bulk supply chahiye ho, ya koi bhi sawaal ho — WhatsApp ya email karein!</p>
+      <div class="cd"><div class="ico">📍</div><div class="txt"><div class="lbl">Pata</div><div class="val">E Block, Bhawanipur, Amdabad, Katihar (Bihar) – 854117</div></div></div>
+      <div class="cd"><div class="ico">📞</div><div class="txt"><div class="lbl">WhatsApp / Mobile</div><div class="val"><a href="https://wa.me/919931804752" target="_blank">+91 99318 04752</a></div></div></div>
+      <div class="cd"><div class="ico">📞</div><div class="txt"><div class="lbl">Customer Care</div><div class="val"><a href="tel:9341737320">+91 93417 37320</a></div></div></div>
+      <div class="cd"><div class="ico">✉️</div><div class="txt"><div class="lbl">Email</div><div class="val"><a href="mailto:fpojanglatal@gmail.com">fpojanglatal@gmail.com</a></div></div></div>
+      <div class="cd"><div class="ico">🏛️</div><div class="txt"><div class="lbl">GSTIN</div><div class="val">10AANAJ1085A1Z8</div></div></div>
+      <div class="cd"><div class="ico">🍽️</div><div class="txt"><div class="lbl">FSSAI</div><div class="val">20425351000639</div></div></div>
+      <a class="wa-contact" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0A%0AMain%20Amrittulya%20products%20order%20karna%20chahta%2Fti%20hoon%3A%0A%0A%E2%96%B6%20Product%3A%20%0A%E2%96%B6%20Matra%20(Quantity)%3A%20%0A%E2%96%B6%20Delivery%20Address%3A%20%0A%0APlease%20confirm%20karein%20aur%20price%20batayein.%20Shukriya!%20%F0%9F%8C%BE" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp par Order Karein — 99318 04752
+      </a>
+    </div>
+    <div class="cf">
+      <div class="fg"><label>Aapka Naam</label><input type="text" placeholder="Naam likhein..."/></div>
+      <div class="fg"><label>Mobile / WhatsApp</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="fg">
+        <label>Kaunsa Utpad Chahiye?</label>
+        <select>
+          <option value="">-- Utpad Chunein --</option>
+          <option>Amrittulya Mustard Oil (500ml)</option>
+          <option>Amrittulya Mustard Oil (1 Litre)</option>
+          <option>Amrittulya Mustard Oil (2 Litre)</option>
+          <option>Amrittulya Raw Makhana (250g)</option>
+          <option>Amrittulya Makhana Aata</option>
+          <option>Roasted Makhana – Tangy Tomato (80g)</option>
+          <option>Roasted Makhana – Cream Onion (80g)</option>
+          <option>Roasted Makhana – Salt Pepper (80g)</option>
+          <option>Roasted Makhana – Mint Makhana (80g)</option>
+          <option>Roasted Makhana – Peri Peri (80g)</option>
+          <option>Roasted Makhana – Sweet Thai Chilli (80g)</option>
+          <option>Multiple / Bulk Order</option>
+        </select>
+      </div>
+      <div class="fg"><label>Matra (Quantity)</label><input type="text" placeholder="Kitna chahiye? e.g. 5kg, 10 packets"/></div>
+      <div class="fg"><label>Delivery Address</label><textarea rows="3" placeholder="Apna poora delivery address likhein..."></textarea></div>
+      <button class="fsub">📧 Email Bhejein — fpojanglatal@gmail.com</button>
+      <a class="fwa" href="https://wa.me/919931804752?text=Namaste%20%F0%9F%99%8F%0A%0AMain%20Amrittulya%20products%20order%20karna%20chahta%2Fti%20hoon%3A%0A%0A%E2%96%B6%20Product%3A%20%0A%E2%96%B6%20Matra%20(Quantity)%3A%20%0A%E2%96%B6%20Delivery%20Address%3A%20%0A%0APlease%20confirm%20karein%20aur%20price%20batayein.%20Shukriya!%20%F0%9F%8C%BE" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ya seedha WhatsApp karein — 99318 04752
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="f-brand">
+      <div class="f-logo">Janglatal FPO · Amrittulya</div>
+      <div class="f-hi">जंगलताल पंचायत किसान उत्पादक संगठन सहकारी समिति लिमिटेड</div>
+      <p>हाथ किसान का, भरोसा आपका — From Farmers to You. 100% Pure · Natural · Healthy. Together for Prosperous Farming &amp; Sustainable Growth.</p>
+    </div>
+    <div class="f-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#promo">Hamare Utpad</a></li>
+        <li><a href="#products">Product Range</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#brand">Amrittulya Brand</a></li>
+        <li><a href="#contact">Sampark Karein</a></li>
+      </ul>
+    </div>
+    <div class="f-contact">
+      <h4>Sampark</h4>
+      <p>📞 <span><a href="https://wa.me/919931804752" style="color:rgba(255,255,255,.8);text-decoration:none">+91 99318 04752</a></span></p>
+      <p>📞 <span>+91 93417 37320</span></p>
+      <p>✉️ <span><a href="mailto:fpojanglatal@gmail.com" style="color:rgba(255,255,255,.8);text-decoration:none">fpojanglatal@gmail.com</a></span></p>
+      <p>📍 <span>Bhawanipur, Amdabad, Katihar (Bihar) – 854117</span></p>
+      <p>🏛️ <span>GSTIN: 10AANAJ1085A1Z8</span></p>
+      <p>🍽️ <span>FSSAI: 20425351000639</span></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="fcopy">© 2026 Janglatal Panchayat Kisaan Utpadak Sangathan Sahkari Samiti Ltd, Katihar, Bihar. Sarvaadhikar Surakshit.</div>
+    <div class="f-badges">
+      <span class="f-badge">FSSAI Licensed</span>
+      <span class="f-badge">GSTIN Registered</span>
+      <span class="f-badge">Make in India</span>
+      <span class="f-badge">No Palm Oil</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
